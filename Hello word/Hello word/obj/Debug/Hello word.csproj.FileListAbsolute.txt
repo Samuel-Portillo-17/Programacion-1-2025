@@ -8,3 +8,13 @@ C:\Users\pines\Desktop\Programacion-1-2025.git\Hello word\Hello word\obj\Debug\H
 C:\Users\pines\Desktop\Programacion-1-2025.git\Hello word\Hello word\obj\Debug\Hello word.csproj.CoreCompileInputs.cache
 C:\Users\pines\Desktop\Programacion-1-2025.git\Hello word\Hello word\obj\Debug\Hello word.exe
 C:\Users\pines\Desktop\Programacion-1-2025.git\Hello word\Hello word\obj\Debug\Hello word.pdb
+C:\Users\pines\Source\Repos\Programacion-1-2\Hello word\Hello word\bin\Debug\Hello word.exe.config
+C:\Users\pines\Source\Repos\Programacion-1-2\Hello word\Hello word\bin\Debug\Hello word.exe
+C:\Users\pines\Source\Repos\Programacion-1-2\Hello word\Hello word\bin\Debug\Hello word.pdb
+C:\Users\pines\Source\Repos\Programacion-1-2\Hello word\Hello word\obj\Debug\Hello word.csproj.AssemblyReference.cache
+C:\Users\pines\Source\Repos\Programacion-1-2\Hello word\Hello word\obj\Debug\Hello_word.Form1.resources
+C:\Users\pines\Source\Repos\Programacion-1-2\Hello word\Hello word\obj\Debug\Hello_word.Properties.Resources.resources
+C:\Users\pines\Source\Repos\Programacion-1-2\Hello word\Hello word\obj\Debug\Hello word.csproj.GenerateResource.cache
+C:\Users\pines\Source\Repos\Programacion-1-2\Hello word\Hello word\obj\Debug\Hello word.csproj.CoreCompileInputs.cache
+C:\Users\pines\Source\Repos\Programacion-1-2\Hello word\Hello word\obj\Debug\Hello word.exe
+C:\Users\pines\Source\Repos\Programacion-1-2\Hello word\Hello word\obj\Debug\Hello word.pdb

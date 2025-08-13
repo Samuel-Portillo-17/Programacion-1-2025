@@ -19,7 +19,11 @@ namespace Hello_word
 
         private void button1_Click(object sender, EventArgs e)
         {
-            lblSaludo.Text = "¡Hola, " + txtNombre.Text + "!";
+            double num1, num2, respuesta;
+            num1 = Double.Parse(txtNum1.Text);
+            num2 = Double.Parse(txtNum2.Text);
+            respuesta = num1 + num2;
+            lblRespuesta.Text = "Respuesta: " + respuesta;
         }
 
         private void lblSaludo_Click(object sender, EventArgs e)
@@ -28,6 +32,16 @@ namespace Hello_word
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNum2_TextChanged(object sender, EventArgs e)
         {
 
         }
