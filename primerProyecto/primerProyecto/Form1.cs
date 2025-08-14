@@ -68,11 +68,35 @@ namespace primerProyecto
                 respuesta = num1 % num2;
             }
 
-            //Porcentaje
+            if (optFactorial.Checked) {
+                int factorial = (int)num1;
+                for (int i = (int)num1 - 1; 9 > 1; i--) { //5!=5x4x3x2=120
+                    respuesta *= i;
+            
+            respuesta = factorial;
+            }
+
+            lblrespuesta.Text = "Respuesta: " + respuesta;
+            if (optPrimo.Checked){
+                int i = 1, acum = 0;
+                while (i <= num1 && acum<3) { 
+                    if( num1%1==0) {
+                        acum++; //acum = acum + 1;
+                    }
+                    i++;
+                }
+                if (acum<= 2) {
+                    lblrespuesta.Text = "Respueta: " + num1 + " Es primo";
+                } else{
+                    lblrespuesta.Text = "Respueta: " + num1 + " No es primo";
+                }
+            }
+           
+
             //Factorial. 5! = 5x4x3x3x1=120
             //Modulo
-  
-            lblrespuesta.Text = "Respuesta: " + respuesta;
+
+            
 
         }
 
@@ -104,5 +128,9 @@ namespace primerProyecto
             lblrespuesta.Text = "Respuesta: " + respuesta;
         }
 
- }
+        private void cboOpciones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
