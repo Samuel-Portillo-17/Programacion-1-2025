@@ -1,0 +1,10 @@
+C:\Users\pines\Desktop\Samuel-Portillo-17\Programacion-1-2025.git\Laboratorio 1 Conversores de monedas\Laboratorio 1 Conversores de monedas\bin\Debug\Laboratorio 1 Conversores de monedas.exe.config
+C:\Users\pines\Desktop\Samuel-Portillo-17\Programacion-1-2025.git\Laboratorio 1 Conversores de monedas\Laboratorio 1 Conversores de monedas\bin\Debug\Laboratorio 1 Conversores de monedas.exe
+C:\Users\pines\Desktop\Samuel-Portillo-17\Programacion-1-2025.git\Laboratorio 1 Conversores de monedas\Laboratorio 1 Conversores de monedas\bin\Debug\Laboratorio 1 Conversores de monedas.pdb
+C:\Users\pines\Desktop\Samuel-Portillo-17\Programacion-1-2025.git\Laboratorio 1 Conversores de monedas\Laboratorio 1 Conversores de monedas\obj\Debug\Laboratorio 1 Conversores de monedas.csproj.AssemblyReference.cache
+C:\Users\pines\Desktop\Samuel-Portillo-17\Programacion-1-2025.git\Laboratorio 1 Conversores de monedas\Laboratorio 1 Conversores de monedas\obj\Debug\Laboratorio_1_Conversores_de_monedas.Form1.resources
+C:\Users\pines\Desktop\Samuel-Portillo-17\Programacion-1-2025.git\Laboratorio 1 Conversores de monedas\Laboratorio 1 Conversores de monedas\obj\Debug\Laboratorio_1_Conversores_de_monedas.Properties.Resources.resources
+C:\Users\pines\Desktop\Samuel-Portillo-17\Programacion-1-2025.git\Laboratorio 1 Conversores de monedas\Laboratorio 1 Conversores de monedas\obj\Debug\Laboratorio 1 Conversores de monedas.csproj.GenerateResource.cache
+C:\Users\pines\Desktop\Samuel-Portillo-17\Programacion-1-2025.git\Laboratorio 1 Conversores de monedas\Laboratorio 1 Conversores de monedas\obj\Debug\Laboratorio 1 Conversores de monedas.csproj.CoreCompileInputs.cache
+C:\Users\pines\Desktop\Samuel-Portillo-17\Programacion-1-2025.git\Laboratorio 1 Conversores de monedas\Laboratorio 1 Conversores de monedas\obj\Debug\Laboratorio 1 Conversores de monedas.exe
+C:\Users\pines\Desktop\Samuel-Portillo-17\Programacion-1-2025.git\Laboratorio 1 Conversores de monedas\Laboratorio 1 Conversores de monedas\obj\Debug\Laboratorio 1 Conversores de monedas.pdb
