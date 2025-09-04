@@ -1,0 +1,10 @@
+C:\Users\pines\Desktop\Parcial Ejercicio 2\Parcial Ejercicio 2\bin\Debug\Parcial Ejercicio 2.exe.config
+C:\Users\pines\Desktop\Parcial Ejercicio 2\Parcial Ejercicio 2\bin\Debug\Parcial Ejercicio 2.exe
+C:\Users\pines\Desktop\Parcial Ejercicio 2\Parcial Ejercicio 2\bin\Debug\Parcial Ejercicio 2.pdb
+C:\Users\pines\Desktop\Parcial Ejercicio 2\Parcial Ejercicio 2\obj\Debug\Parcial Ejercicio 2.csproj.AssemblyReference.cache
+C:\Users\pines\Desktop\Parcial Ejercicio 2\Parcial Ejercicio 2\obj\Debug\Parcial_Ejercicio_2.Form1.resources
+C:\Users\pines\Desktop\Parcial Ejercicio 2\Parcial Ejercicio 2\obj\Debug\Parcial_Ejercicio_2.Properties.Resources.resources
+C:\Users\pines\Desktop\Parcial Ejercicio 2\Parcial Ejercicio 2\obj\Debug\Parcial Ejercicio 2.csproj.GenerateResource.cache
+C:\Users\pines\Desktop\Parcial Ejercicio 2\Parcial Ejercicio 2\obj\Debug\Parcial Ejercicio 2.csproj.CoreCompileInputs.cache
+C:\Users\pines\Desktop\Parcial Ejercicio 2\Parcial Ejercicio 2\obj\Debug\Parcial Ejercicio 2.exe
+C:\Users\pines\Desktop\Parcial Ejercicio 2\Parcial Ejercicio 2\obj\Debug\Parcial Ejercicio 2.pdb
