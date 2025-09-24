@@ -34,8 +34,14 @@ namespace primerProyecto
                 objComando.CommandText = "SELECT * FROM alumnos";
                 objAdaptador.Fill(objDs, "alumnos");//Tomando los datos de la BD y llenando el DataSet
 
-                return objDs;
+            objComando.CommandText = "SELECT * FROM Docentes";
+            objAdaptador.Fill(objDs, "Docentes");//Tomando los datos de la BD y llenando el DataSet
+
+            objComando.CommandText = "SELECT * FROM Materias";
+            objAdaptador.Fill(objDs, "Materias");//Tomando los datos de la BD y llenando el DataSet
+            return objDs;
             }
+
 
             public string administrarDatosAlumnos(String[] datos, String accion)
             {
@@ -54,27 +60,66 @@ namespace primerProyecto
                 }
                 return ejecutarSQL(sql, datos);
             }
-            private String ejecutarSQL(String sql, String[] datos)
+        private String ejecutarSQL(String sql, String[] datos)
+        {
+            try
             {
-                try
-                {
-                    objComando.Connection = objConexion;
-                    objComando.CommandText = sql;
+                objComando.Connection = objConexion;
+                objComando.CommandText = sql;
 
-                    objComando.Parameters.Clear();
-                    objComando.Parameters.AddWithValue("@idAlumno", datos[0]);
-                    objComando.Parameters.AddWithValue("@codigo", datos[1]);
-                    objComando.Parameters.AddWithValue("@nombre", datos[2]);
-                    objComando.Parameters.AddWithValue("@direccion", datos[3]);
-                    objComando.Parameters.AddWithValue("@telefono", datos[4]);
+                objComando.Parameters.Clear();
+                objComando.Parameters.AddWithValue("@idAlumno", datos[0]);
+                objComando.Parameters.AddWithValue("@codigo", datos[1]);
+                objComando.Parameters.AddWithValue("@nombre", datos[2]);
+                objComando.Parameters.AddWithValue("@direccion", datos[3]);
+                objComando.Parameters.AddWithValue("@telefono", datos[4]);
 
-                    return objComando.ExecuteNonQuery().ToString();
-                }
-                catch (Exception ex)
-                {
-                    return ex.Message;
-                }
+                return objComando.ExecuteNonQuery().ToString();
             }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
+            public string administrarDatosDocentes(String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO Docentes(codigo,nombre,direccion,telefono) VALUES (@codigo, @nombre, @direccion, @telefono)";
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE alumnos SET codigo=@codigo, nombre=@nombre, direccion=@direccion, telefono=@telefono WHERE idAlumno=@idAlumno";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE FROM alumnos WHERE idAlumno=@idAlumno";
+            }
+            return ejecutarSQL1(sql, datos);
+        }
+        private String ejecutarSQL1(String sql, String[] datos)
+        {
+            try
+            {
+                objComando.Connection = objConexion;
+                objComando.CommandText = sql;
+
+                objComando.Parameters.Clear();
+                objComando.Parameters.AddWithValue("@idDocente", datos[0]);
+                objComando.Parameters.AddWithValue("@codigo", datos[1]);
+                objComando.Parameters.AddWithValue("@nombre", datos[2]);
+                objComando.Parameters.AddWithValue("@direccion", datos[3]);
+                objComando.Parameters.AddWithValue("@telefono", datos[4]);
+
+                return objComando.ExecuteNonQuery().ToString();
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
         }
     }
 

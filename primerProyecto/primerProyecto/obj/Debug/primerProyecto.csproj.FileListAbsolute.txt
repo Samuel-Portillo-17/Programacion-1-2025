@@ -53,3 +53,4 @@ C:\Users\pines\Desktop\Programacion-1-2025.git\primerProyecto\primerProyecto\obj
 C:\Users\pines\Desktop\Programacion-1-2025.git\primerProyecto\primerProyecto\obj\Debug\primerProyecto.pdb
 C:\Users\pines\Desktop\Programacion-1-2025.git\primerProyecto\primerProyecto\bin\Debug\db_academica.mdf
 C:\Users\pines\Desktop\Programacion-1-2025.git\primerProyecto\primerProyecto\bin\Debug\db_academica_log.ldf
+C:\Users\pines\Desktop\Programacion-1-2025.git\primerProyecto\primerProyecto\obj\Debug\primerProyecto.frmPrincipal.resources
