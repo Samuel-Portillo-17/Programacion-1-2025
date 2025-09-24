@@ -8,15 +8,15 @@ using System.Data.SqlClient; //Esta  libreria me permite traajar con SQL Server
 
 namespace primerProyecto
 {
-    internal class Conexion {
+    internal class Conexion1 {
         //Definir los miembros de la clase, atributos y metodos
         SqlConnection objConexion = new SqlConnection(); //conectarme a la BD.
         SqlCommand objComando = new SqlCommand(); //Ejecutar SQL en la BD. Lectura, actualizacion, Eiminacion, insertar
         SqlDataAdapter objAdaptador = new SqlDataAdapter(); //un puente entre la BD y la aplicacion
         DataSet objDs = new DataSet(); //Es una representacion de la arquitectura de la BD en la memoria
 
-        public Conexion() { //Constructor. Inicializador de los atributos
-            String cadenaConexion = "";
+        public Conexion1() { //Constructor. Inicializador de los atributos
+            String cadenaConexion = "@\"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\db_academica.mdf;Integrated Security=True\";";
             objConexion.ConnectionString = cadenaConexion;
             objConexion.Open(); //Abrir la conexion a la BD
         }
