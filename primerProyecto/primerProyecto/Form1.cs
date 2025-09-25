@@ -34,7 +34,7 @@ namespace primerProyecto
             new double []{1, 86400, 1440, 24, 0.142857, 0.0328767, 0.00273973}, //Tiempo
              new double []{1, 1e+6, 0.386102, 1.196e+6, 1.076e+7, 1.55e+9, 100} //Area
         };
-
+             
         private void btnConvertir_Click(object sender, EventArgs e)
         {
             double cantidad = double.Parse(txtCantidadConversor.Text);
