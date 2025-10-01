@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grbBusquedaMateria = new System.Windows.Forms.GroupBox();
+            this.cboBuscarMateria = new System.Windows.Forms.ComboBox();
             this.grdMateria = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +55,6 @@
             this.lblNombreMateria = new System.Windows.Forms.Label();
             this.txtCodigoMateria = new System.Windows.Forms.TextBox();
             this.lblCodigoMateria = new System.Windows.Forms.Label();
-            this.cboBuscarMateria = new System.Windows.Forms.ComboBox();
             this.grbBusquedaMateria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMateria)).BeginInit();
             this.grbEdicionAlumno.SuspendLayout();
@@ -76,6 +76,18 @@
             this.grbBusquedaMateria.TabIndex = 13;
             this.grbBusquedaMateria.TabStop = false;
             this.grbBusquedaMateria.Text = "Busqueda Materias";
+            // 
+            // cboBuscarMateria
+            // 
+            this.cboBuscarMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBuscarMateria.FormattingEnabled = true;
+            this.cboBuscarMateria.Items.AddRange(new object[] {
+            "Codigo",
+            "Materia"});
+            this.cboBuscarMateria.Location = new System.Drawing.Point(11, 28);
+            this.cboBuscarMateria.Name = "cboBuscarMateria";
+            this.cboBuscarMateria.Size = new System.Drawing.Size(110, 23);
+            this.cboBuscarMateria.TabIndex = 13;
             // 
             // grdMateria
             // 
@@ -140,6 +152,7 @@
             this.txtBuscarMateria.Name = "txtBuscarMateria";
             this.txtBuscarMateria.Size = new System.Drawing.Size(324, 23);
             this.txtBuscarMateria.TabIndex = 10;
+            this.txtBuscarMateria.TextChanged += new System.EventHandler(this.txtBuscarMateria_TextChanged);
             this.txtBuscarMateria.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarMateria_KeyUp);
             // 
             // grbEdicionAlumno
@@ -356,18 +369,6 @@
             this.lblCodigoMateria.Size = new System.Drawing.Size(55, 17);
             this.lblCodigoMateria.TabIndex = 0;
             this.lblCodigoMateria.Text = "Codigo:";
-            // 
-            // cboBuscarMateria
-            // 
-            this.cboBuscarMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboBuscarMateria.FormattingEnabled = true;
-            this.cboBuscarMateria.Items.AddRange(new object[] {
-            "Codigo",
-            "Materia"});
-            this.cboBuscarMateria.Location = new System.Drawing.Point(11, 28);
-            this.cboBuscarMateria.Name = "cboBuscarMateria";
-            this.cboBuscarMateria.Size = new System.Drawing.Size(110, 23);
-            this.cboBuscarMateria.TabIndex = 13;
             // 
             // frmMaterias
             // 

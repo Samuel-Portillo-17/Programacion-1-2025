@@ -227,5 +227,15 @@ namespace primerProyecto
         {
 
         }
+
+        private void grdAlumnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void grdAlumnos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionarAlumno();
+        }
     }
 }

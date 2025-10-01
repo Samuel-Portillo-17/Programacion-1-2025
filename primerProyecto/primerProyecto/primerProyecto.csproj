@@ -85,6 +85,12 @@
     <Compile Include="frmMaterias.Designer.cs">
       <DependentUpon>frmMaterias.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNotas.Designer.cs">
+      <DependentUpon>frmNotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPeriodos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMaterias.resx">
       <DependentUpon>frmMaterias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNotas.resx">
+      <DependentUpon>frmNotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPeriodos.resx">
       <DependentUpon>frmPeriodos.cs</DependentUpon>

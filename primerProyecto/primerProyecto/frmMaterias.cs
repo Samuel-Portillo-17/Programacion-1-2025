@@ -239,6 +239,11 @@ namespace primerProyecto
         {
             seleccionarMaterias();
         }
+
+        private void txtBuscarMateria_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 
