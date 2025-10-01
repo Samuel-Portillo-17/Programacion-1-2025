@@ -83,15 +83,15 @@ namespace primerProyecto
             String sql = "";
             if (accion == "nuevo")
             {
-                sql = "INSERT INTO Docentes(codigo,nombre,direccion,telefono) VALUES ('" + datos[1] + "', '" + datos[2] + "', '" + datos[3] + "')";
+                sql = "INSERT INTO Docentes(nombre,direccion,telefono) VALUES ('" + datos[1] + "', '" + datos[2] + "', '" + datos[3] + "')";
             }
             else if (accion == "modificar")
             {
-                sql = "UPDATE Docentes SET nombre='" + datos[1] + "', direccion='" + datos[2] + "', telefono='" + datos[3] + "' WHERE idAlumno='" + datos[0] + "'";
+                sql = "UPDATE Docentes SET nombre='" + datos[1] + "', direccion='" + datos[2] + "', telefono='" + datos[3] + "' WHERE idDocente='" + datos[0] + "'";
             }
             else if (accion == "eliminar")
             {
-                sql = "DELETE FROM Dcentes WHERE idDocente='" + datos[0] + "'";
+                sql = "DELETE FROM Docentes WHERE idDocente='" + datos[0] + "'";
             }
             return ejecutarSQL(sql, datos);
         }

@@ -48,47 +48,8 @@ namespace primerProyecto
         {
             actualizarDs();
         }
-    
- 
 
-        private void btnEliminarDocentes_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Esta seguro de eliminar a " + txtNombreDocentes.Text,
-               "Eliminando Docentes", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                String respuesta = objConexion1.administrarDatosAlumnos(
-                    new String[] { idDocente.Text, "", "", "", "" }, "eliminar"
-                );
-                if (respuesta != "1")
-                {
-                    MessageBox.Show(respuesta, "Error al eliminar Docentes.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    posicion = 0;
-                    actualizarDs();
-                }
-            }
-        }
 
-        private void btnModificarAlumno_Click(object sender, EventArgs e)
-        {
-            if (btnModificarDocentes.Text == "Modificar")
-            {
-                btnAgregarDocentes.Text = "Guardar";
-                btnModificarDocentes.Text = "Cancelar";
-                estadoControles(true);
-                accion = "modificar";
-
-            }
-            else
-            {//Cancelar
-                mostrarDatos();
-                estadoControles(false);
-                btnAgregarDocentes.Text = "Nuevo";
-                btnModificarDocentes.Text = "Modificar";
-            }
-        }
         private void estadoControles(Boolean estado)
         {
             grbDatosDocentes.Enabled = estado;
@@ -98,31 +59,36 @@ namespace primerProyecto
         private void limpiarControles()
         {
             idDocente.Text = "";
-            txtCodigoDocentes.Text = "";
             txtNombreDocentes.Text = "";
             txtDireccionDocentes.Text = "";
             txtTelefonoDocentes.Text = "";
         }
 
-        private void txtBuscarAlumno_KeyUp(object sender, KeyEventArgs e)
-        {
-            filtrarDatos(txtBuscarDocentes.Text);
-        }
+
         private void filtrarDatos(String valor)
         {
             DataView objDv = objDt.DefaultView;
             objDv.RowFilter = "codigo like '%" + valor + "%' OR nombre like '%" + valor + "%'";
             grdDocentes.DataSource = objDv;
-            seleccionarAlumno();
+            seleccionarDocente();
         }
-        private void seleccionarAlumno()
+        private void seleccionarDocente()
         {
-            posicion = objDt.Rows.IndexOf(objDt.Rows.Find(grdDocentes.CurrentRow.Cells["id"].Value));
-            mostrarDatos();
-        }
-        private void grdAlumnos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            seleccionarAlumno();
+            try
+            {
+                if (grdDocentes.CurrentRow == null)
+                {
+                    MessageBox.Show("No hay filas");
+                    return;
+                }
+                string id = grdDocentes.CurrentRow.Cells["id"].Value.ToString();
+                posicion = objDt.Rows.IndexOf(objDt.Rows.Find(id));
+                mostrarDatos();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         private void btnPrimeroDocentes_Click(object sender, EventArgs e)
@@ -192,6 +158,79 @@ namespace primerProyecto
                     actualizarDs();
                 }
             }
+        }
+
+        private void FormDocente_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                filtrarDatos(txtBuscarDocentes.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void grdDocentes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionarDocente();
+        }
+
+        private void btnModificarDocentes_Click(object sender, EventArgs e)
+        {
+            if (btnModificarDocentes.Text == "Modificar")
+            {
+                btnAgregarDocentes.Text = "Guardar";
+                btnModificarDocentes.Text = "Cancelar";
+                estadoControles(true);
+                accion = "modificar";
+
+            }
+            else
+            {//Cancelar
+                mostrarDatos();
+                estadoControles(false);
+                btnAgregarDocentes.Text = "Nuevo";
+                btnModificarDocentes.Text = "Modificar";
+            }
+        }
+
+        private void btnEliminarDocentes_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro de eliminar a " + txtNombreDocentes.Text,
+             "Eliminando Docentes", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                String respuesta = objConexion1.administrarDatosAlumnos(
+                    new String[] { idDocente.Text, "", "", "", "" }, "eliminar"
+                );
+                if (respuesta != "1")
+                {
+                    MessageBox.Show(respuesta, "Error al eliminar Docentes.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    posicion = 0;
+                    actualizarDs();
+                }
+            }
+        }
+
+        private void txtBuscarDocentes_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                filtrarDatos(txtBuscarDocentes.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void grdDocentes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionarDocente();
         }
     }
 }

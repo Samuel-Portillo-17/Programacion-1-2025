@@ -401,6 +401,7 @@
             this.Name = "frmAlumnos";
             this.Text = "Administracion de alumnos";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmAlumnos_KeyUp);
             this.grbBusquedaAlumno.ResumeLayout(false);
             this.grbBusquedaAlumno.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdAlumnos)).EndInit();

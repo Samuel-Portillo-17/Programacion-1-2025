@@ -30,6 +30,10 @@
         {
             this.grbBusquedaMateria = new System.Windows.Forms.GroupBox();
             this.grdMateria = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscarMateria = new System.Windows.Forms.TextBox();
             this.grbEdicionAlumno = new System.Windows.Forms.GroupBox();
             this.btnEliminarMateria = new System.Windows.Forms.Button();
@@ -50,10 +54,7 @@
             this.lblNombreMateria = new System.Windows.Forms.Label();
             this.txtCodigoMateria = new System.Windows.Forms.TextBox();
             this.lblCodigoMateria = new System.Windows.Forms.Label();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboBuscarMateria = new System.Windows.Forms.ComboBox();
             this.grbBusquedaMateria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMateria)).BeginInit();
             this.grbEdicionAlumno.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             // grbBusquedaMateria
             // 
+            this.grbBusquedaMateria.Controls.Add(this.cboBuscarMateria);
             this.grbBusquedaMateria.Controls.Add(this.grdMateria);
             this.grbBusquedaMateria.Controls.Add(this.txtBuscarMateria);
             this.grbBusquedaMateria.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -93,14 +95,52 @@
             this.grdMateria.RowTemplate.Height = 28;
             this.grdMateria.Size = new System.Drawing.Size(464, 173);
             this.grdMateria.TabIndex = 11;
+            this.grdMateria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdMateria_CellClick);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "idMateria";
+            this.Id.HeaderText = "ID";
+            this.Id.MinimumWidth = 8;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            this.Id.Width = 150;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 8;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 150;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "nombre";
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.MinimumWidth = 8;
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Width = 150;
+            // 
+            // Unidad
+            // 
+            this.Unidad.DataPropertyName = "uv";
+            this.Unidad.HeaderText = "Unidad";
+            this.Unidad.MinimumWidth = 8;
+            this.Unidad.Name = "Unidad";
+            this.Unidad.ReadOnly = true;
             // 
             // txtBuscarMateria
             // 
-            this.txtBuscarMateria.Location = new System.Drawing.Point(7, 29);
+            this.txtBuscarMateria.Location = new System.Drawing.Point(144, 29);
             this.txtBuscarMateria.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscarMateria.Name = "txtBuscarMateria";
-            this.txtBuscarMateria.Size = new System.Drawing.Size(461, 23);
+            this.txtBuscarMateria.Size = new System.Drawing.Size(324, 23);
             this.txtBuscarMateria.TabIndex = 10;
+            this.txtBuscarMateria.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarMateria_KeyUp);
             // 
             // grbEdicionAlumno
             // 
@@ -126,6 +166,7 @@
             this.btnEliminarMateria.TabIndex = 2;
             this.btnEliminarMateria.Text = "Eliminar";
             this.btnEliminarMateria.UseVisualStyleBackColor = true;
+            this.btnEliminarMateria.Click += new System.EventHandler(this.btnEliminarMateria_Click);
             // 
             // btnModificarMateria
             // 
@@ -136,6 +177,7 @@
             this.btnModificarMateria.TabIndex = 1;
             this.btnModificarMateria.Text = "Modificar";
             this.btnModificarMateria.UseVisualStyleBackColor = true;
+            this.btnModificarMateria.Click += new System.EventHandler(this.btnModificarMateria_Click);
             // 
             // btnAgregarMateria
             // 
@@ -146,6 +188,7 @@
             this.btnAgregarMateria.TabIndex = 0;
             this.btnAgregarMateria.Text = "Nuevo";
             this.btnAgregarMateria.UseVisualStyleBackColor = true;
+            this.btnAgregarMateria.Click += new System.EventHandler(this.btnAgregarMateria_Click);
             // 
             // grbNavegacionAlumno
             // 
@@ -155,7 +198,7 @@
             this.grbNavegacionAlumno.Controls.Add(this.btnAnteriorMateria);
             this.grbNavegacionAlumno.Controls.Add(this.btnPrimeroMateria);
             this.grbNavegacionAlumno.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbNavegacionAlumno.Location = new System.Drawing.Point(10, 307);
+            this.grbNavegacionAlumno.Location = new System.Drawing.Point(11, 295);
             this.grbNavegacionAlumno.Margin = new System.Windows.Forms.Padding(2);
             this.grbNavegacionAlumno.Name = "grbNavegacionAlumno";
             this.grbNavegacionAlumno.Padding = new System.Windows.Forms.Padding(2);
@@ -183,6 +226,7 @@
             this.btnUltimoMateria.TabIndex = 3;
             this.btnUltimoMateria.Text = "Ultimo";
             this.btnUltimoMateria.UseVisualStyleBackColor = true;
+            this.btnUltimoMateria.Click += new System.EventHandler(this.btnUltimoMateria_Click);
             // 
             // btnSiguienteMateria
             // 
@@ -193,6 +237,7 @@
             this.btnSiguienteMateria.TabIndex = 2;
             this.btnSiguienteMateria.Text = "Siguiente";
             this.btnSiguienteMateria.UseVisualStyleBackColor = true;
+            this.btnSiguienteMateria.Click += new System.EventHandler(this.btnSiguienteMateria_Click);
             // 
             // btnAnteriorMateria
             // 
@@ -203,6 +248,7 @@
             this.btnAnteriorMateria.TabIndex = 1;
             this.btnAnteriorMateria.Text = "Anterior";
             this.btnAnteriorMateria.UseVisualStyleBackColor = true;
+            this.btnAnteriorMateria.Click += new System.EventHandler(this.btnAnteriorMateria_Click);
             // 
             // btnPrimeroMateria
             // 
@@ -213,6 +259,7 @@
             this.btnPrimeroMateria.TabIndex = 0;
             this.btnPrimeroMateria.Text = "Primero";
             this.btnPrimeroMateria.UseVisualStyleBackColor = true;
+            this.btnPrimeroMateria.Click += new System.EventHandler(this.btnPrimeroMateria_Click);
             // 
             // grbDatosMateria
             // 
@@ -230,10 +277,11 @@
             this.grbDatosMateria.Margin = new System.Windows.Forms.Padding(2);
             this.grbDatosMateria.Name = "grbDatosMateria";
             this.grbDatosMateria.Padding = new System.Windows.Forms.Padding(2);
-            this.grbDatosMateria.Size = new System.Drawing.Size(326, 270);
+            this.grbDatosMateria.Size = new System.Drawing.Size(326, 236);
             this.grbDatosMateria.TabIndex = 10;
             this.grbDatosMateria.TabStop = false;
             this.grbDatosMateria.Text = "Datos";
+            this.grbDatosMateria.Enter += new System.EventHandler(this.grbDatosMateria_Enter);
             // 
             // idMateria
             // 
@@ -269,9 +317,9 @@
             this.lblUvMateria.Location = new System.Drawing.Point(34, 144);
             this.lblUvMateria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUvMateria.Name = "lblUvMateria";
-            this.lblUvMateria.Size = new System.Drawing.Size(71, 17);
+            this.lblUvMateria.Size = new System.Drawing.Size(55, 17);
             this.lblUvMateria.TabIndex = 4;
-            this.lblUvMateria.Text = "Direccion:";
+            this.lblUvMateria.Text = "Unidad:";
             // 
             // txtNombreMateria
             // 
@@ -309,41 +357,17 @@
             this.lblCodigoMateria.TabIndex = 0;
             this.lblCodigoMateria.Text = "Codigo:";
             // 
-            // Id
+            // cboBuscarMateria
             // 
-            this.Id.DataPropertyName = "idMateria";
-            this.Id.HeaderText = "ID";
-            this.Id.MinimumWidth = 8;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 150;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 8;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 150;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "nombre";
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.MinimumWidth = 8;
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Width = 150;
-            // 
-            // Unidad
-            // 
-            this.Unidad.DataPropertyName = "uv";
-            this.Unidad.HeaderText = "Unidad";
-            this.Unidad.MinimumWidth = 8;
-            this.Unidad.Name = "Unidad";
-            this.Unidad.ReadOnly = true;
+            this.cboBuscarMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBuscarMateria.FormattingEnabled = true;
+            this.cboBuscarMateria.Items.AddRange(new object[] {
+            "Codigo",
+            "Materia"});
+            this.cboBuscarMateria.Location = new System.Drawing.Point(11, 28);
+            this.cboBuscarMateria.Name = "cboBuscarMateria";
+            this.cboBuscarMateria.Size = new System.Drawing.Size(110, 23);
+            this.cboBuscarMateria.TabIndex = 13;
             // 
             // frmMaterias
             // 
@@ -397,5 +421,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
+        private System.Windows.Forms.ComboBox cboBuscarMateria;
     }
 }

@@ -81,8 +81,21 @@ namespace primerProyecto
         }
         private void seleccionarAlumno()
         {
-            posicion = objDt.Rows.IndexOf(objDt.Rows.Find(grdAlumnos.CurrentRow.Cells["id"].Value));
-            mostrarDatos();
+            try
+            {
+                if (grdAlumnos.CurrentRow == null)
+                {
+                    MessageBox.Show("No hay filas");
+                    return;
+                }
+                string id = grdAlumnos.CurrentRow.Cells["id"].Value.ToString();
+                posicion = objDt.Rows.IndexOf(objDt.Rows.Find(id));
+                mostrarDatos();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
      
         private void btnPrimeroAlumno_Click(object sender, EventArgs e)
@@ -208,6 +221,11 @@ namespace primerProyecto
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void frmAlumnos_KeyUp(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

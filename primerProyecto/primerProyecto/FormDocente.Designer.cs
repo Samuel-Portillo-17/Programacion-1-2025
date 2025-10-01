@@ -50,13 +50,11 @@
             this.lblDireccionDocentes = new System.Windows.Forms.Label();
             this.txtNombreDocentes = new System.Windows.Forms.TextBox();
             this.lblNombreDocentes = new System.Windows.Forms.Label();
-            this.txtCodigoDocentes = new System.Windows.Forms.TextBox();
-            this.lblCodigoDocentes = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbBusquedaDocente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDocentes)).BeginInit();
             this.grbEdicionDocentes.SuspendLayout();
@@ -85,10 +83,10 @@
             this.grdDocentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdDocentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.codigo,
             this.nombre,
             this.direccion,
-            this.telefono});
+            this.telefono,
+            this.codigo});
             this.grdDocentes.Location = new System.Drawing.Point(4, 53);
             this.grdDocentes.Margin = new System.Windows.Forms.Padding(2);
             this.grdDocentes.Name = "grdDocentes";
@@ -97,6 +95,8 @@
             this.grdDocentes.RowTemplate.Height = 28;
             this.grdDocentes.Size = new System.Drawing.Size(550, 173);
             this.grdDocentes.TabIndex = 11;
+            this.grdDocentes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDocentes_CellClick);
+            this.grdDocentes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDocentes_CellContentClick);
             // 
             // txtBuscarDocentes
             // 
@@ -105,6 +105,7 @@
             this.txtBuscarDocentes.Name = "txtBuscarDocentes";
             this.txtBuscarDocentes.Size = new System.Drawing.Size(546, 23);
             this.txtBuscarDocentes.TabIndex = 10;
+            this.txtBuscarDocentes.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarDocentes_KeyUp);
             // 
             // grbEdicionDocentes
             // 
@@ -130,6 +131,7 @@
             this.btnEliminarDocentes.TabIndex = 2;
             this.btnEliminarDocentes.Text = "Eliminar";
             this.btnEliminarDocentes.UseVisualStyleBackColor = true;
+            this.btnEliminarDocentes.Click += new System.EventHandler(this.btnEliminarDocentes_Click);
             // 
             // btnModificarDocentes
             // 
@@ -140,6 +142,7 @@
             this.btnModificarDocentes.TabIndex = 1;
             this.btnModificarDocentes.Text = "Modificar";
             this.btnModificarDocentes.UseVisualStyleBackColor = true;
+            this.btnModificarDocentes.Click += new System.EventHandler(this.btnModificarDocentes_Click);
             // 
             // btnAgregarDocentes
             // 
@@ -233,8 +236,6 @@
             this.grbDatosDocentes.Controls.Add(this.lblDireccionDocentes);
             this.grbDatosDocentes.Controls.Add(this.txtNombreDocentes);
             this.grbDatosDocentes.Controls.Add(this.lblNombreDocentes);
-            this.grbDatosDocentes.Controls.Add(this.txtCodigoDocentes);
-            this.grbDatosDocentes.Controls.Add(this.lblCodigoDocentes);
             this.grbDatosDocentes.Enabled = false;
             this.grbDatosDocentes.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbDatosDocentes.Location = new System.Drawing.Point(10, 13);
@@ -258,7 +259,7 @@
             // 
             // txtTelefonoDocentes
             // 
-            this.txtTelefonoDocentes.Location = new System.Drawing.Point(113, 181);
+            this.txtTelefonoDocentes.Location = new System.Drawing.Point(103, 155);
             this.txtTelefonoDocentes.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefonoDocentes.Name = "txtTelefonoDocentes";
             this.txtTelefonoDocentes.Size = new System.Drawing.Size(124, 23);
@@ -267,7 +268,7 @@
             // lblTelefonoDocentes
             // 
             this.lblTelefonoDocentes.AutoSize = true;
-            this.lblTelefonoDocentes.Location = new System.Drawing.Point(34, 181);
+            this.lblTelefonoDocentes.Location = new System.Drawing.Point(24, 155);
             this.lblTelefonoDocentes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTelefonoDocentes.Name = "lblTelefonoDocentes";
             this.lblTelefonoDocentes.Size = new System.Drawing.Size(65, 17);
@@ -286,7 +287,7 @@
             // 
             // txtDireccionDocentes
             // 
-            this.txtDireccionDocentes.Location = new System.Drawing.Point(113, 144);
+            this.txtDireccionDocentes.Location = new System.Drawing.Point(103, 118);
             this.txtDireccionDocentes.Margin = new System.Windows.Forms.Padding(2);
             this.txtDireccionDocentes.Name = "txtDireccionDocentes";
             this.txtDireccionDocentes.Size = new System.Drawing.Size(124, 23);
@@ -295,7 +296,7 @@
             // lblDireccionDocentes
             // 
             this.lblDireccionDocentes.AutoSize = true;
-            this.lblDireccionDocentes.Location = new System.Drawing.Point(34, 144);
+            this.lblDireccionDocentes.Location = new System.Drawing.Point(24, 118);
             this.lblDireccionDocentes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDireccionDocentes.Name = "lblDireccionDocentes";
             this.lblDireccionDocentes.Size = new System.Drawing.Size(71, 17);
@@ -304,7 +305,7 @@
             // 
             // txtNombreDocentes
             // 
-            this.txtNombreDocentes.Location = new System.Drawing.Point(113, 106);
+            this.txtNombreDocentes.Location = new System.Drawing.Point(103, 80);
             this.txtNombreDocentes.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreDocentes.Name = "txtNombreDocentes";
             this.txtNombreDocentes.Size = new System.Drawing.Size(124, 23);
@@ -313,30 +314,12 @@
             // lblNombreDocentes
             // 
             this.lblNombreDocentes.AutoSize = true;
-            this.lblNombreDocentes.Location = new System.Drawing.Point(34, 106);
+            this.lblNombreDocentes.Location = new System.Drawing.Point(24, 80);
             this.lblNombreDocentes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreDocentes.Name = "lblNombreDocentes";
             this.lblNombreDocentes.Size = new System.Drawing.Size(61, 17);
             this.lblNombreDocentes.TabIndex = 2;
             this.lblNombreDocentes.Text = "Nombre:";
-            // 
-            // txtCodigoDocentes
-            // 
-            this.txtCodigoDocentes.Location = new System.Drawing.Point(113, 72);
-            this.txtCodigoDocentes.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCodigoDocentes.Name = "txtCodigoDocentes";
-            this.txtCodigoDocentes.Size = new System.Drawing.Size(124, 23);
-            this.txtCodigoDocentes.TabIndex = 1;
-            // 
-            // lblCodigoDocentes
-            // 
-            this.lblCodigoDocentes.AutoSize = true;
-            this.lblCodigoDocentes.Location = new System.Drawing.Point(34, 72);
-            this.lblCodigoDocentes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCodigoDocentes.Name = "lblCodigoDocentes";
-            this.lblCodigoDocentes.Size = new System.Drawing.Size(55, 17);
-            this.lblCodigoDocentes.TabIndex = 0;
-            this.lblCodigoDocentes.Text = "Codigo:";
             // 
             // Id
             // 
@@ -347,15 +330,6 @@
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
             this.Id.Width = 150;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "codigo";
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.MinimumWidth = 8;
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            this.codigo.Width = 150;
             // 
             // nombre
             // 
@@ -384,6 +358,13 @@
             this.telefono.ReadOnly = true;
             this.telefono.Width = 150;
             // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
             // FormDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,6 +377,7 @@
             this.Name = "FormDocente";
             this.Text = "Administracion Docente";
             this.Load += new System.EventHandler(this.FormDocente_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormDocente_KeyUp);
             this.grbBusquedaDocente.ResumeLayout(false);
             this.grbBusquedaDocente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDocentes)).EndInit();
@@ -432,12 +414,10 @@
         private System.Windows.Forms.Label lblDireccionDocentes;
         private System.Windows.Forms.TextBox txtNombreDocentes;
         private System.Windows.Forms.Label lblNombreDocentes;
-        private System.Windows.Forms.TextBox txtCodigoDocentes;
-        private System.Windows.Forms.Label lblCodigoDocentes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
     }
 }
