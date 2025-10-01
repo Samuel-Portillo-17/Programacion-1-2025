@@ -24,9 +24,23 @@ namespace primerProyecto
 
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 objAlumnos = new Form1(); 
+            frmAlumnos objAlumnos = new frmAlumnos(); 
             objAlumnos.MdiParent = this;
             objAlumnos.Show();
+        }
+
+        private void materiasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMaterias objMaterias = new frmMaterias();
+            objMaterias.MdiParent = this;
+            objMaterias.Show();
+        }
+
+        private void docentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDocente objDocentes = new FormDocente();
+            objDocentes.MdiParent = this;
+            objDocentes.Show();
         }
     }
 }
