@@ -70,3 +70,4 @@ C:\Users\pines\Desktop\Programacion-1-2025\primerProyecto\primerProyecto\bin\Deb
 C:\Users\pines\Desktop\Programacion-1-2025\primerProyecto\primerProyecto\bin\Debug\primerProyecto.exe
 C:\Users\pines\Desktop\Programacion-1-2025\primerProyecto\primerProyecto\bin\Debug\primerProyecto.pdb
 C:\Users\pines\Desktop\Programacion-1-2025\primerProyecto\primerProyecto\obj\Debug\primerProyecto.frmMaterias.resources
+C:\Users\pines\Desktop\Programacion-1-2025\primerProyecto\primerProyecto\obj\Debug\primerProyecto.frmPeriodos.resources

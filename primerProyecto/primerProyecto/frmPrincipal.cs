@@ -42,5 +42,12 @@ namespace primerProyecto
             objDocentes.MdiParent = this;
             objDocentes.Show();
         }
+
+        private void periodosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPeriodos objPeriodo = new frmPeriodos();
+            objPeriodo.MdiParent = this;
+            objPeriodo.Show();
+        }
     }
 }
