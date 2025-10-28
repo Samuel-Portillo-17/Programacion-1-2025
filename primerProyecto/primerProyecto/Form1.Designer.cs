@@ -142,7 +142,7 @@
             // btnConvertir
             // 
             this.btnConvertir.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvertir.Location = new System.Drawing.Point(353, 109);
+            this.btnConvertir.Location = new System.Drawing.Point(330, 168);
             this.btnConvertir.Margin = new System.Windows.Forms.Padding(2);
             this.btnConvertir.Name = "btnConvertir";
             this.btnConvertir.Size = new System.Drawing.Size(171, 47);

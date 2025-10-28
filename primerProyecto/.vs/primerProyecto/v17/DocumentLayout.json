@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\pc\\OneDrive\\Desktop\\Progral-Semi25-Practica2\\primerProyecto\\",
+  "WorkspaceRootPath": "C:\\Users\\pines\\Desktop\\Programacion-1-2025\\primerProyecto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{630EF267-DD39-4E06-B265-7A2E3A27FDEF}|primerProyecto\\primerProyecto.csproj|C:\\Users\\pc\\OneDrive\\Desktop\\Progral-Semi25-Practica2\\primerProyecto\\primerproyecto\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{630EF267-DD39-4E06-B265-7A2E3A27FDEF}|primerProyecto\\primerProyecto.csproj|solutionrelative:primerproyecto\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{630EF267-DD39-4E06-B265-7A2E3A27FDEF}|primerProyecto\\primerProyecto.csproj|c:\\users\\pines\\desktop\\programacion-1-2025\\primerproyecto\\primerproyecto\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{630EF267-DD39-4E06-B265-7A2E3A27FDEF}|primerProyecto\\primerProyecto.csproj|solutionrelative:primerproyecto\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{630EF267-DD39-4E06-B265-7A2E3A27FDEF}|primerProyecto\\primerProyecto.csproj|c:\\users\\pc\\onedrive\\desktop\\progral-semi25-practica2\\primerproyecto\\primerproyecto\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{630EF267-DD39-4E06-B265-7A2E3A27FDEF}|primerProyecto\\primerProyecto.csproj|solutionrelative:primerproyecto\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{630EF267-DD39-4E06-B265-7A2E3A27FDEF}|primerProyecto\\primerProyecto.csproj|C:\\Users\\pines\\Desktop\\Programacion-1-2025\\primerProyecto\\primerproyecto\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{630EF267-DD39-4E06-B265-7A2E3A27FDEF}|primerProyecto\\primerProyecto.csproj|solutionrelative:primerproyecto\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,15 +18,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\pc\\OneDrive\\Desktop\\Progral-Semi25-Practica2\\primerProyecto\\primerProyecto\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\pines\\Desktop\\Programacion-1-2025\\primerProyecto\\primerProyecto\\Form1.cs",
               "RelativeDocumentMoniker": "primerProyecto\\Form1.cs",
-              "ToolTip": "C:\\Users\\pc\\OneDrive\\Desktop\\Progral-Semi25-Practica2\\primerProyecto\\primerProyecto\\Form1.cs",
+              "ToolTip": "C:\\Users\\pines\\Desktop\\Programacion-1-2025\\primerProyecto\\primerProyecto\\Form1.cs",
               "RelativeToolTip": "primerProyecto\\Form1.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAYwCQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -35,11 +39,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\pc\\OneDrive\\Desktop\\Progral-Semi25-Practica2\\primerProyecto\\primerProyecto\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\pines\\Desktop\\Programacion-1-2025\\primerProyecto\\primerProyecto\\Form1.cs",
               "RelativeDocumentMoniker": "primerProyecto\\Form1.cs",
-              "ToolTip": "C:\\Users\\pc\\OneDrive\\Desktop\\Progral-Semi25-Practica2\\primerProyecto\\primerProyecto\\Form1.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\pines\\Desktop\\Programacion-1-2025\\primerProyecto\\primerProyecto\\Form1.cs [Dise\u00F1o]",
               "RelativeToolTip": "primerProyecto\\Form1.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-13T15:21:33.55Z",
