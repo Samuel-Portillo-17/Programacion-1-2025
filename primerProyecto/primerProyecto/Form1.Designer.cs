@@ -28,164 +28,394 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCantidadConversor = new System.Windows.Forms.Label();
-            this.lblRespuestaConversor = new System.Windows.Forms.Label();
-            this.txtCantidadConversor = new System.Windows.Forms.TextBox();
-            this.lblTipoConversor = new System.Windows.Forms.Label();
-            this.cboTipoConversor = new System.Windows.Forms.ComboBox();
-            this.lblDeConversor = new System.Windows.Forms.Label();
-            this.cboDeConversor = new System.Windows.Forms.ComboBox();
-            this.lblAConversor = new System.Windows.Forms.Label();
-            this.cboAConversor = new System.Windows.Forms.ComboBox();
-            this.btnConvertir = new System.Windows.Forms.Button();
+            this.grbDatosAlumno = new System.Windows.Forms.GroupBox();
+            this.idAlumno = new System.Windows.Forms.Label();
+            this.txtTelefonoAlumno = new System.Windows.Forms.TextBox();
+            this.lblTelefonoAlumno = new System.Windows.Forms.Label();
+            this.lblIdlAlumno = new System.Windows.Forms.Label();
+            this.txtDireccionAlumno = new System.Windows.Forms.TextBox();
+            this.lblDireccionAlumno = new System.Windows.Forms.Label();
+            this.txtNombreAlumno = new System.Windows.Forms.TextBox();
+            this.lblNombreAlumno = new System.Windows.Forms.Label();
+            this.txtCodigoAlumno = new System.Windows.Forms.TextBox();
+            this.lblCodigoAlumno = new System.Windows.Forms.Label();
+            this.grbNavegacionAlumno = new System.Windows.Forms.GroupBox();
+            this.lblnRegistrosAlumno = new System.Windows.Forms.Label();
+            this.btnUltimoAlumno = new System.Windows.Forms.Button();
+            this.btnSiguienteAlumno = new System.Windows.Forms.Button();
+            this.btnAnteriorAlumno = new System.Windows.Forms.Button();
+            this.btnPrimeroAlumno = new System.Windows.Forms.Button();
+            this.grbEdicionAlumno = new System.Windows.Forms.GroupBox();
+            this.btnEliminarAlumno = new System.Windows.Forms.Button();
+            this.btnModificarAlumno = new System.Windows.Forms.Button();
+            this.btnAgregarAlumno = new System.Windows.Forms.Button();
+            this.grbBusquedaAlumno = new System.Windows.Forms.GroupBox();
+            this.grdAlumnos = new System.Windows.Forms.DataGridView();
+            this.txtBuscarAlumno = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grbDatosAlumno.SuspendLayout();
+            this.grbNavegacionAlumno.SuspendLayout();
+            this.grbEdicionAlumno.SuspendLayout();
+            this.grbBusquedaAlumno.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdAlumnos)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblCantidadConversor
+            // grbDatosAlumno
             // 
-            this.lblCantidadConversor.AutoSize = true;
-            this.lblCantidadConversor.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadConversor.Location = new System.Drawing.Point(41, 110);
-            this.lblCantidadConversor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCantidadConversor.Name = "lblCantidadConversor";
-            this.lblCantidadConversor.Size = new System.Drawing.Size(68, 17);
-            this.lblCantidadConversor.TabIndex = 19;
-            this.lblCantidadConversor.Text = "Cantidad:";
+            this.grbDatosAlumno.Controls.Add(this.idAlumno);
+            this.grbDatosAlumno.Controls.Add(this.txtTelefonoAlumno);
+            this.grbDatosAlumno.Controls.Add(this.lblTelefonoAlumno);
+            this.grbDatosAlumno.Controls.Add(this.lblIdlAlumno);
+            this.grbDatosAlumno.Controls.Add(this.txtDireccionAlumno);
+            this.grbDatosAlumno.Controls.Add(this.lblDireccionAlumno);
+            this.grbDatosAlumno.Controls.Add(this.txtNombreAlumno);
+            this.grbDatosAlumno.Controls.Add(this.lblNombreAlumno);
+            this.grbDatosAlumno.Controls.Add(this.txtCodigoAlumno);
+            this.grbDatosAlumno.Controls.Add(this.lblCodigoAlumno);
+            this.grbDatosAlumno.Enabled = false;
+            this.grbDatosAlumno.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbDatosAlumno.Location = new System.Drawing.Point(32, 34);
+            this.grbDatosAlumno.Name = "grbDatosAlumno";
+            this.grbDatosAlumno.Size = new System.Drawing.Size(489, 415);
+            this.grbDatosAlumno.TabIndex = 0;
+            this.grbDatosAlumno.TabStop = false;
+            this.grbDatosAlumno.Text = "Datos";
             // 
-            // lblRespuestaConversor
+            // idAlumno
             // 
-            this.lblRespuestaConversor.AutoSize = true;
-            this.lblRespuestaConversor.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRespuestaConversor.Location = new System.Drawing.Point(41, 135);
-            this.lblRespuestaConversor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblRespuestaConversor.Name = "lblRespuestaConversor";
-            this.lblRespuestaConversor.Size = new System.Drawing.Size(76, 17);
-            this.lblRespuestaConversor.TabIndex = 20;
-            this.lblRespuestaConversor.Text = "Respuesta:";
+            this.idAlumno.AutoSize = true;
+            this.idAlumno.Location = new System.Drawing.Point(136, 67);
+            this.idAlumno.Name = "idAlumno";
+            this.idAlumno.Size = new System.Drawing.Size(31, 23);
+            this.idAlumno.TabIndex = 9;
+            this.idAlumno.Text = "ID";
             // 
-            // txtCantidadConversor
+            // txtTelefonoAlumno
             // 
-            this.txtCantidadConversor.Location = new System.Drawing.Point(106, 109);
-            this.txtCantidadConversor.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCantidadConversor.Name = "txtCantidadConversor";
-            this.txtCantidadConversor.Size = new System.Drawing.Size(163, 20);
-            this.txtCantidadConversor.TabIndex = 21;
+            this.txtTelefonoAlumno.Location = new System.Drawing.Point(237, 279);
+            this.txtTelefonoAlumno.Name = "txtTelefonoAlumno";
+            this.txtTelefonoAlumno.Size = new System.Drawing.Size(184, 30);
+            this.txtTelefonoAlumno.TabIndex = 8;
             // 
-            // lblTipoConversor
+            // lblTelefonoAlumno
             // 
-            this.lblTipoConversor.AutoSize = true;
-            this.lblTipoConversor.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoConversor.Location = new System.Drawing.Point(42, 31);
-            this.lblTipoConversor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTipoConversor.Name = "lblTipoConversor";
-            this.lblTipoConversor.Size = new System.Drawing.Size(45, 17);
-            this.lblTipoConversor.TabIndex = 22;
-            this.lblTipoConversor.Text = "Serie:";
+            this.lblTelefonoAlumno.AutoSize = true;
+            this.lblTelefonoAlumno.Location = new System.Drawing.Point(51, 279);
+            this.lblTelefonoAlumno.Name = "lblTelefonoAlumno";
+            this.lblTelefonoAlumno.Size = new System.Drawing.Size(90, 23);
+            this.lblTelefonoAlumno.TabIndex = 7;
+            this.lblTelefonoAlumno.Text = "Telefono:";
             // 
-            // cboTipoConversor
+            // lblIdlAlumno
             // 
-            this.cboTipoConversor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipoConversor.Items.AddRange(new object[] {
-            "Monedas",
-            "Longitud",
-            "Masa",
-            "Volumen",
-            "Almacenamiento",
-            "Tiempo",
-            "Area"});
-            this.cboTipoConversor.Location = new System.Drawing.Point(97, 29);
-            this.cboTipoConversor.Margin = new System.Windows.Forms.Padding(2);
-            this.cboTipoConversor.Name = "cboTipoConversor";
-            this.cboTipoConversor.Size = new System.Drawing.Size(172, 21);
-            this.cboTipoConversor.TabIndex = 18;
-            this.cboTipoConversor.SelectedIndexChanged += new System.EventHandler(this.cboTipoConversor_SelectedIndexChanged);
+            this.lblIdlAlumno.AutoSize = true;
+            this.lblIdlAlumno.Location = new System.Drawing.Point(50, 67);
+            this.lblIdlAlumno.Name = "lblIdlAlumno";
+            this.lblIdlAlumno.Size = new System.Drawing.Size(38, 23);
+            this.lblIdlAlumno.TabIndex = 6;
+            this.lblIdlAlumno.Text = "ID:";
             // 
-            // lblDeConversor
+            // txtDireccionAlumno
             // 
-            this.lblDeConversor.AutoSize = true;
-            this.lblDeConversor.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeConversor.Location = new System.Drawing.Point(42, 61);
-            this.lblDeConversor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDeConversor.Name = "lblDeConversor";
-            this.lblDeConversor.Size = new System.Drawing.Size(30, 17);
-            this.lblDeConversor.TabIndex = 24;
-            this.lblDeConversor.Text = "De:";
+            this.txtDireccionAlumno.Location = new System.Drawing.Point(237, 222);
+            this.txtDireccionAlumno.Name = "txtDireccionAlumno";
+            this.txtDireccionAlumno.Size = new System.Drawing.Size(184, 30);
+            this.txtDireccionAlumno.TabIndex = 5;
             // 
-            // cboDeConversor
+            // lblDireccionAlumno
             // 
-            this.cboDeConversor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboDeConversor.Location = new System.Drawing.Point(97, 57);
-            this.cboDeConversor.Margin = new System.Windows.Forms.Padding(2);
-            this.cboDeConversor.Name = "cboDeConversor";
-            this.cboDeConversor.Size = new System.Drawing.Size(172, 21);
-            this.cboDeConversor.TabIndex = 23;
+            this.lblDireccionAlumno.AutoSize = true;
+            this.lblDireccionAlumno.Location = new System.Drawing.Point(51, 222);
+            this.lblDireccionAlumno.Name = "lblDireccionAlumno";
+            this.lblDireccionAlumno.Size = new System.Drawing.Size(97, 23);
+            this.lblDireccionAlumno.TabIndex = 4;
+            this.lblDireccionAlumno.Text = "Direccion:";
             // 
-            // lblAConversor
+            // txtNombreAlumno
             // 
-            this.lblAConversor.AutoSize = true;
-            this.lblAConversor.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAConversor.Location = new System.Drawing.Point(314, 61);
-            this.lblAConversor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblAConversor.Name = "lblAConversor";
-            this.lblAConversor.Size = new System.Drawing.Size(23, 17);
-            this.lblAConversor.TabIndex = 26;
-            this.lblAConversor.Text = "A:";
+            this.txtNombreAlumno.Location = new System.Drawing.Point(237, 163);
+            this.txtNombreAlumno.Name = "txtNombreAlumno";
+            this.txtNombreAlumno.Size = new System.Drawing.Size(184, 30);
+            this.txtNombreAlumno.TabIndex = 3;
             // 
-            // cboAConversor
+            // lblNombreAlumno
             // 
-            this.cboAConversor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboAConversor.Location = new System.Drawing.Point(353, 57);
-            this.cboAConversor.Margin = new System.Windows.Forms.Padding(2);
-            this.cboAConversor.Name = "cboAConversor";
-            this.cboAConversor.Size = new System.Drawing.Size(172, 21);
-            this.cboAConversor.TabIndex = 25;
+            this.lblNombreAlumno.AutoSize = true;
+            this.lblNombreAlumno.Location = new System.Drawing.Point(51, 163);
+            this.lblNombreAlumno.Name = "lblNombreAlumno";
+            this.lblNombreAlumno.Size = new System.Drawing.Size(84, 23);
+            this.lblNombreAlumno.TabIndex = 2;
+            this.lblNombreAlumno.Text = "Nombre:";
             // 
-            // btnConvertir
+            // txtCodigoAlumno
             // 
-            this.btnConvertir.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvertir.Location = new System.Drawing.Point(330, 168);
-            this.btnConvertir.Margin = new System.Windows.Forms.Padding(2);
-            this.btnConvertir.Name = "btnConvertir";
-            this.btnConvertir.Size = new System.Drawing.Size(171, 47);
-            this.btnConvertir.TabIndex = 27;
-            this.btnConvertir.Text = "Convertir";
-            this.btnConvertir.UseVisualStyleBackColor = true;
-            this.btnConvertir.Click += new System.EventHandler(this.btnConvertir_Click);
+            this.txtCodigoAlumno.Location = new System.Drawing.Point(237, 110);
+            this.txtCodigoAlumno.Name = "txtCodigoAlumno";
+            this.txtCodigoAlumno.Size = new System.Drawing.Size(184, 30);
+            this.txtCodigoAlumno.TabIndex = 1;
+            // 
+            // lblCodigoAlumno
+            // 
+            this.lblCodigoAlumno.AutoSize = true;
+            this.lblCodigoAlumno.Location = new System.Drawing.Point(51, 110);
+            this.lblCodigoAlumno.Name = "lblCodigoAlumno";
+            this.lblCodigoAlumno.Size = new System.Drawing.Size(76, 23);
+            this.lblCodigoAlumno.TabIndex = 0;
+            this.lblCodigoAlumno.Text = "Codigo:";
+            // 
+            // grbNavegacionAlumno
+            // 
+            this.grbNavegacionAlumno.Controls.Add(this.lblnRegistrosAlumno);
+            this.grbNavegacionAlumno.Controls.Add(this.btnUltimoAlumno);
+            this.grbNavegacionAlumno.Controls.Add(this.btnSiguienteAlumno);
+            this.grbNavegacionAlumno.Controls.Add(this.btnAnteriorAlumno);
+            this.grbNavegacionAlumno.Controls.Add(this.btnPrimeroAlumno);
+            this.grbNavegacionAlumno.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbNavegacionAlumno.Location = new System.Drawing.Point(32, 475);
+            this.grbNavegacionAlumno.Name = "grbNavegacionAlumno";
+            this.grbNavegacionAlumno.Size = new System.Drawing.Size(489, 133);
+            this.grbNavegacionAlumno.TabIndex = 1;
+            this.grbNavegacionAlumno.TabStop = false;
+            this.grbNavegacionAlumno.Text = "Navegacion";
+            // 
+            // lblnRegistrosAlumno
+            // 
+            this.lblnRegistrosAlumno.AutoSize = true;
+            this.lblnRegistrosAlumno.Location = new System.Drawing.Point(184, 98);
+            this.lblnRegistrosAlumno.Name = "lblnRegistrosAlumno";
+            this.lblnRegistrosAlumno.Size = new System.Drawing.Size(67, 23);
+            this.lblnRegistrosAlumno.TabIndex = 10;
+            this.lblnRegistrosAlumno.Text = "X de N";
+            // 
+            // btnUltimoAlumno
+            // 
+            this.btnUltimoAlumno.Location = new System.Drawing.Point(346, 36);
+            this.btnUltimoAlumno.Name = "btnUltimoAlumno";
+            this.btnUltimoAlumno.Size = new System.Drawing.Size(92, 49);
+            this.btnUltimoAlumno.TabIndex = 3;
+            this.btnUltimoAlumno.Text = "Ultimo";
+            this.btnUltimoAlumno.UseVisualStyleBackColor = true;
+            this.btnUltimoAlumno.Click += new System.EventHandler(this.btnUltimoAlumno_Click_1);
+            // 
+            // btnSiguienteAlumno
+            // 
+            this.btnSiguienteAlumno.Location = new System.Drawing.Point(237, 36);
+            this.btnSiguienteAlumno.Name = "btnSiguienteAlumno";
+            this.btnSiguienteAlumno.Size = new System.Drawing.Size(103, 49);
+            this.btnSiguienteAlumno.TabIndex = 2;
+            this.btnSiguienteAlumno.Text = "Siguiente";
+            this.btnSiguienteAlumno.UseVisualStyleBackColor = true;
+            this.btnSiguienteAlumno.Click += new System.EventHandler(this.btnSiguienteAlumno_Click_1);
+            // 
+            // btnAnteriorAlumno
+            // 
+            this.btnAnteriorAlumno.Location = new System.Drawing.Point(140, 36);
+            this.btnAnteriorAlumno.Name = "btnAnteriorAlumno";
+            this.btnAnteriorAlumno.Size = new System.Drawing.Size(91, 49);
+            this.btnAnteriorAlumno.TabIndex = 1;
+            this.btnAnteriorAlumno.Text = "Anterior";
+            this.btnAnteriorAlumno.UseVisualStyleBackColor = true;
+            this.btnAnteriorAlumno.Click += new System.EventHandler(this.btnAnteriorAlumno_Click);
+            // 
+            // btnPrimeroAlumno
+            // 
+            this.btnPrimeroAlumno.Location = new System.Drawing.Point(33, 36);
+            this.btnPrimeroAlumno.Name = "btnPrimeroAlumno";
+            this.btnPrimeroAlumno.Size = new System.Drawing.Size(94, 49);
+            this.btnPrimeroAlumno.TabIndex = 0;
+            this.btnPrimeroAlumno.Text = "Primero";
+            this.btnPrimeroAlumno.UseVisualStyleBackColor = true;
+            this.btnPrimeroAlumno.Click += new System.EventHandler(this.btnPrimeroAlumno_Click);
+            // 
+            // grbEdicionAlumno
+            // 
+            this.grbEdicionAlumno.Controls.Add(this.btnEliminarAlumno);
+            this.grbEdicionAlumno.Controls.Add(this.btnModificarAlumno);
+            this.grbEdicionAlumno.Controls.Add(this.btnAgregarAlumno);
+            this.grbEdicionAlumno.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbEdicionAlumno.Location = new System.Drawing.Point(562, 475);
+            this.grbEdicionAlumno.Name = "grbEdicionAlumno";
+            this.grbEdicionAlumno.Size = new System.Drawing.Size(489, 100);
+            this.grbEdicionAlumno.TabIndex = 4;
+            this.grbEdicionAlumno.TabStop = false;
+            this.grbEdicionAlumno.Text = "Edicion";
+            // 
+            // btnEliminarAlumno
+            // 
+            this.btnEliminarAlumno.Location = new System.Drawing.Point(342, 36);
+            this.btnEliminarAlumno.Name = "btnEliminarAlumno";
+            this.btnEliminarAlumno.Size = new System.Drawing.Size(141, 49);
+            this.btnEliminarAlumno.TabIndex = 2;
+            this.btnEliminarAlumno.Text = "Eliminar";
+            this.btnEliminarAlumno.UseVisualStyleBackColor = true;
+            this.btnEliminarAlumno.Click += new System.EventHandler(this.btnEliminarAlumno_Click);
+            // 
+            // btnModificarAlumno
+            // 
+            this.btnModificarAlumno.Location = new System.Drawing.Point(185, 36);
+            this.btnModificarAlumno.Name = "btnModificarAlumno";
+            this.btnModificarAlumno.Size = new System.Drawing.Size(142, 49);
+            this.btnModificarAlumno.TabIndex = 1;
+            this.btnModificarAlumno.Text = "Modificar";
+            this.btnModificarAlumno.UseVisualStyleBackColor = true;
+            this.btnModificarAlumno.Click += new System.EventHandler(this.btnModificarAlumno_Click);
+            // 
+            // btnAgregarAlumno
+            // 
+            this.btnAgregarAlumno.Location = new System.Drawing.Point(24, 36);
+            this.btnAgregarAlumno.Name = "btnAgregarAlumno";
+            this.btnAgregarAlumno.Size = new System.Drawing.Size(155, 49);
+            this.btnAgregarAlumno.TabIndex = 0;
+            this.btnAgregarAlumno.Text = "Nuevo";
+            this.btnAgregarAlumno.UseVisualStyleBackColor = true;
+            this.btnAgregarAlumno.Click += new System.EventHandler(this.btnAgregarAlumno_Click);
+            // 
+            // grbBusquedaAlumno
+            // 
+            this.grbBusquedaAlumno.Controls.Add(this.grdAlumnos);
+            this.grbBusquedaAlumno.Controls.Add(this.txtBuscarAlumno);
+            this.grbBusquedaAlumno.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbBusquedaAlumno.Location = new System.Drawing.Point(576, 49);
+            this.grbBusquedaAlumno.Name = "grbBusquedaAlumno";
+            this.grbBusquedaAlumno.Size = new System.Drawing.Size(866, 400);
+            this.grbBusquedaAlumno.TabIndex = 5;
+            this.grbBusquedaAlumno.TabStop = false;
+            this.grbBusquedaAlumno.Text = "Busqueda Alumnos";
+            // 
+            // grdAlumnos
+            // 
+            this.grdAlumnos.AllowUserToAddRows = false;
+            this.grdAlumnos.AllowUserToDeleteRows = false;
+            this.grdAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdAlumnos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.codigo,
+            this.nombre,
+            this.direccion,
+            this.telefono});
+            this.grdAlumnos.Location = new System.Drawing.Point(6, 81);
+            this.grdAlumnos.Name = "grdAlumnos";
+            this.grdAlumnos.ReadOnly = true;
+            this.grdAlumnos.RowHeadersWidth = 62;
+            this.grdAlumnos.RowTemplate.Height = 28;
+            this.grdAlumnos.Size = new System.Drawing.Size(825, 266);
+            this.grdAlumnos.TabIndex = 11;
+            // 
+            // txtBuscarAlumno
+            // 
+            this.txtBuscarAlumno.Location = new System.Drawing.Point(10, 45);
+            this.txtBuscarAlumno.Name = "txtBuscarAlumno";
+            this.txtBuscarAlumno.Size = new System.Drawing.Size(817, 30);
+            this.txtBuscarAlumno.TabIndex = 10;
+            this.txtBuscarAlumno.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarAlumno_KeyUp);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "IdAlumno";
+            this.Id.HeaderText = "ID";
+            this.Id.MinimumWidth = 8;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            this.Id.Width = 150;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.MinimumWidth = 8;
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            this.codigo.Width = 150;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 8;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 150;
+            // 
+            // direccion
+            // 
+            this.direccion.DataPropertyName = "direccion";
+            this.direccion.HeaderText = "Direccion";
+            this.direccion.MinimumWidth = 8;
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            this.direccion.Width = 200;
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.MinimumWidth = 8;
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 150;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 300);
-            this.Controls.Add(this.btnConvertir);
-            this.Controls.Add(this.cboAConversor);
-            this.Controls.Add(this.lblAConversor);
-            this.Controls.Add(this.cboDeConversor);
-            this.Controls.Add(this.lblDeConversor);
-            this.Controls.Add(this.cboTipoConversor);
-            this.Controls.Add(this.lblTipoConversor);
-            this.Controls.Add(this.txtCantidadConversor);
-            this.Controls.Add(this.lblRespuestaConversor);
-            this.Controls.Add(this.lblCantidadConversor);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.ClientSize = new System.Drawing.Size(1515, 637);
+            this.Controls.Add(this.grbBusquedaAlumno);
+            this.Controls.Add(this.grbEdicionAlumno);
+            this.Controls.Add(this.grbNavegacionAlumno);
+            this.Controls.Add(this.grbDatosAlumno);
             this.Name = "Form1";
-            this.Text = "Hola";
+            this.Text = "ADMINISTRACION DE ALUMNOS";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.grbDatosAlumno.ResumeLayout(false);
+            this.grbDatosAlumno.PerformLayout();
+            this.grbNavegacionAlumno.ResumeLayout(false);
+            this.grbNavegacionAlumno.PerformLayout();
+            this.grbEdicionAlumno.ResumeLayout(false);
+            this.grbBusquedaAlumno.ResumeLayout(false);
+            this.grbBusquedaAlumno.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdAlumnos)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblCantidadConversor;
-        private System.Windows.Forms.Label lblRespuestaConversor;
-        private System.Windows.Forms.TextBox txtCantidadConversor;
-        private System.Windows.Forms.Label lblTipoConversor;
-        private System.Windows.Forms.ComboBox cboTipoConversor;
-        private System.Windows.Forms.Label lblDeConversor;
-        private System.Windows.Forms.ComboBox cboDeConversor;
-        private System.Windows.Forms.Label lblAConversor;
-        private System.Windows.Forms.ComboBox cboAConversor;
-        private System.Windows.Forms.Button btnConvertir;
+        private System.Windows.Forms.GroupBox grbDatosAlumno;
+        private System.Windows.Forms.Label idAlumno;
+        private System.Windows.Forms.TextBox txtTelefonoAlumno;
+        private System.Windows.Forms.Label lblTelefonoAlumno;
+        private System.Windows.Forms.Label lblIdlAlumno;
+        private System.Windows.Forms.TextBox txtDireccionAlumno;
+        private System.Windows.Forms.Label lblDireccionAlumno;
+        private System.Windows.Forms.TextBox txtNombreAlumno;
+        private System.Windows.Forms.Label lblNombreAlumno;
+        private System.Windows.Forms.TextBox txtCodigoAlumno;
+        private System.Windows.Forms.Label lblCodigoAlumno;
+        private System.Windows.Forms.GroupBox grbNavegacionAlumno;
+        private System.Windows.Forms.Button btnPrimeroAlumno;
+        private System.Windows.Forms.Button btnUltimoAlumno;
+        private System.Windows.Forms.Button btnSiguienteAlumno;
+        private System.Windows.Forms.Button btnAnteriorAlumno;
+        private System.Windows.Forms.GroupBox grbEdicionAlumno;
+        private System.Windows.Forms.Button btnEliminarAlumno;
+        private System.Windows.Forms.Button btnModificarAlumno;
+        private System.Windows.Forms.Button btnAgregarAlumno;
+        private System.Windows.Forms.Label lblnRegistrosAlumno;
+        private System.Windows.Forms.GroupBox grbBusquedaAlumno;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.TextBox txtBuscarAlumno;
+        private System.Windows.Forms.DataGridView grdAlumnos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
     }
 }
 

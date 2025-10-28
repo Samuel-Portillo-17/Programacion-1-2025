@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,47 +17,221 @@ namespace primerProyecto
         {
             InitializeComponent();
         }
-        String[][] etiquetas = new string[][] {
-            new string[]{"Dolar", "Pesos Mexicanos", "Quetzal", "Lempira", "Colon SV", "Cordobas", "Colon CR"}, //Monedas
-            new string[]{"Metros", "Cm", "Pulgadas","Pie", "Varas", "Yardas", "Km", "Millas"}, //Longitud
-            new string[]{"Libra", "Onza", "Gramo", "Kg", "Quintal", "Tonelada Corta"}, //Masa
-            new string[]{"Galon Us", "Litros", "Pinta Us", "Ml"}, //Volumen
-            new string[]{"GB", "Bit", "Byte", "KB", "MG", "TB"}, //Almacenamiento
-            new string[]{"Dia", "Segundos", "Minutos", "Horas", "Semana", "Meses", "Año"}, //Tiempo
-             new string[]{"Km2", "Mt2", "Milla cuadrada", "Yarda Cuadrada", "Pie cuadrado", "Pulgada Cuadrada", "Hectarea"} //Area
-        };
-        double[][] valores = new double[][] {
-            new double []{1,18.78, 7.66, 26.15, 8.75, 36.78, 504.12}, //Monedas
-            new double []{1, 100, 39.37, 3.28084, 1.193, 1.09361, 0.001, 0.000621371}, //Longitud
-            new double []{1, 16, 453.592, 0.453592, 0.01, 0.001,0.0005}, //Masa
-            new double []{1, 3.78541, 8, 3785.41}, //Volumen
-            new double []{1, 8e+9, 1e+9, 1e+6, 1000, 0.001}, //Almacenamiento
-            new double []{1, 86400, 1440, 24, 0.142857, 0.0328767, 0.00273973}, //Tiempo
-             new double []{1, 1e+6, 0.386102, 1.196e+6, 1.076e+7, 1.55e+9, 100} //Area
-        };
-             
-        private void btnConvertir_Click(object sender, EventArgs e)
+        Conexion1 objConexion1 = new Conexion1();
+        DataSet objDs = new DataSet();
+        DataTable objDt = new DataTable();
+
+        public int posicion = 0;
+        public string accion = "nuevo";
+
+        private void actualizarDs()
         {
-            double cantidad = double.Parse(txtCantidadConversor.Text);
+            objDs.Clear(); //Limpiar el DataSet
+            objDs = objConexion1.obtenerDatos();
+            objDt = objDs.Tables["alumnos"];
+            objDt.PrimaryKey = new DataColumn[] { objDt.Columns["idAlumno"] };
+            grdAlumnos.DataSource = objDt.DefaultView;
+            mostrarDatos();
+        }
+        private void mostrarDatos()
+        {
+            if (objDt.Rows.Count > 0)
+            {
+                idAlumno.Text = objDt.Rows[posicion]["idAlumno"].ToString();
+                txtCodigoAlumno.Text = objDt.Rows[posicion]["codigo"].ToString();
+                txtNombreAlumno.Text = objDt.Rows[posicion]["nombre"].ToString();
+                txtDireccionAlumno.Text = objDt.Rows[posicion]["direccion"].ToString();
+                txtTelefonoAlumno.Text = objDt.Rows[posicion]["telefono"].ToString();
 
-            int tipo = cboTipoConversor.SelectedIndex;
-            int de = cboDeConversor.SelectedIndex;
-            int a = cboAConversor.SelectedIndex;
-
-            double respuesta = cantidad * valores[tipo][a] / valores[tipo][de];
-
-            lblRespuestaConversor.Text = "Respuesta: " + respuesta.ToString("N2");
+                lblnRegistrosAlumno.Text = (posicion + 1) + " de " + objDt.Rows.Count;
+            }
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            actualizarDs();
         }
 
-        private void cboTipoConversor_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void btnUltimoAlumno_Click_1(object sender, EventArgs e)
         {
-            cboDeConversor.Items.Clear();
-            cboAConversor.Items.Clear();
-            cboDeConversor.Items.AddRange(etiquetas[cboTipoConversor.SelectedIndex]);
-            cboAConversor.Items.AddRange(etiquetas[cboTipoConversor.SelectedIndex]);
+            posicion = objDt.Rows.Count - 1;
+            mostrarDatos();
+        }
+
+        private void btnSiguienteAlumno_Click_1(object sender, EventArgs e)
+        {
+            if (posicion < objDt.Rows.Count - 1)
+            {
+                posicion++;// posicion=posicion+1
+                mostrarDatos();
+            }
+            else
+            {
+                MessageBox.Show("Estas en el ultimo registro.", "Navegacion de Alumnos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnAnteriorAlumno_Click(object sender, EventArgs e)
+        {
+            if (posicion > 0)
+            {
+                posicion--;// posicion=posicion-1
+                mostrarDatos();
+            }
+            else
+            {
+                MessageBox.Show("Estas en el primer registro.", "Navegacion de Alumnos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnPrimeroAlumno_Click(object sender, EventArgs e)
+        {
+            posicion = 0;
+            mostrarDatos();
+        }
+
+        private void btnAgregarAlumno_Click(object sender, EventArgs e)
+        {
+            if (btnAgregarAlumno.Text == "Nuevo")
+            {
+                btnAgregarAlumno.Text = "Guardar";
+                btnModificarAlumno.Text = "Cancelar";
+                estadoControles(true);
+                accion = "nuevo";
+                limpiarControles();
+            }
+            else
+            {//Guardar
+                String[] alumnos = {
+                    idAlumno.Text, txtCodigoAlumno.Text, txtNombreAlumno.Text, txtDireccionAlumno.Text,
+                    txtTelefonoAlumno.Text
+                };
+                String respuesta = objConexion1.administrarDatosAlumnos(alumnos, accion);
+                if (respuesta != "1")
+                {
+                    MessageBox.Show(respuesta, "Error al guardar alumnos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    estadoControles(false);
+                    btnAgregarAlumno.Text = "Nuevo";
+                    btnModificarAlumno.Text = "Modificar";
+                    actualizarDs();
+                }
+            }
+
+        }
+
+        private void btnEliminarAlumno_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro de eliminar a " + txtNombreAlumno.Text,
+               "Eliminando alumnos", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                String respuesta = objConexion1.administrarDatosAlumnos(
+                    new String[] { idAlumno.Text, "", "", "", "" }, "eliminar"
+                );
+                if (respuesta != "1")
+                {
+                    MessageBox.Show(respuesta, "Error al eliminar alumnos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    posicion = 0;
+                    actualizarDs();
+                }
+            }
+        }
+
+        private void btnModificarAlumno_Click(object sender, EventArgs e)
+        {
+            if (btnModificarAlumno.Text == "Modificar")
+            {
+                btnAgregarAlumno.Text = "Guardar";
+                btnModificarAlumno.Text = "Cancelar";
+                estadoControles(true);
+                accion = "modificar";
+
+            }
+            else
+            {//Cancelar
+                mostrarDatos();
+                estadoControles(false);
+                btnAgregarAlumno.Text = "Nuevo";
+                btnModificarAlumno.Text = "Modificar";
+            }
+        }
+        private void estadoControles(Boolean estado)
+        {
+            grbDatosAlumno.Enabled = estado;
+            grbNavegacionAlumno.Enabled = !estado;
+            btnEliminarAlumno.Enabled = !estado;
+        }
+        private void limpiarControles()
+        {
+            idAlumno.Text = "";
+            txtCodigoAlumno.Text = "";
+            txtNombreAlumno.Text = "";
+            txtDireccionAlumno.Text = "";
+            txtTelefonoAlumno.Text = "";
+        }
+
+        private void txtBuscarAlumno_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                filtrarDatos(txtBuscarAlumno.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void filtrarDatos(String valor)
+        {
+            try
+            {
+                DataView objDv = objDt.DefaultView;
+                objDv.RowFilter = "codigo like '%" + valor + "%' OR nombre like '" + valor + "%'";
+                grdAlumnos.DataSource = objDv;
+                seleccionarAlumno();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+        private void seleccionarAlumno()
+        {
+            try
+            {
+                if (grdAlumnos.CurrentRow == null)
+                {
+                    MessageBox.Show("No hay filas");
+                    return;
+                }
+                string id = grdAlumnos.CurrentRow.Cells["id"].Value.ToString();
+                posicion = objDt.Rows.IndexOf(objDt.Rows.Find(id));
+                mostrarDatos();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+        private void grdAlumnos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionarAlumno();
         }
     }
 }
+
+
+
+
+
+
+
+
 
 
 
