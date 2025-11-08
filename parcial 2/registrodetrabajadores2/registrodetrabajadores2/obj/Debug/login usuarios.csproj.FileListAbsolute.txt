@@ -1,0 +1,15 @@
+C:\Users\pines\Desktop\login usuarios\registrodetrabajadores2\registrodetrabajadores2\bin\Debug\academica.mdf
+C:\Users\pines\Desktop\login usuarios\registrodetrabajadores2\registrodetrabajadores2\bin\Debug\academica_log.ldf
+C:\Users\pines\Desktop\login usuarios\registrodetrabajadores2\registrodetrabajadores2\bin\Debug\registrodetrabajadores2.exe.config
+C:\Users\pines\Desktop\login usuarios\registrodetrabajadores2\registrodetrabajadores2\bin\Debug\registrodetrabajadores2.exe
+C:\Users\pines\Desktop\login usuarios\registrodetrabajadores2\registrodetrabajadores2\bin\Debug\registrodetrabajadores2.pdb
+C:\Users\pines\Desktop\login usuarios\registrodetrabajadores2\registrodetrabajadores2\obj\Debug\login usuarios.csproj.AssemblyReference.cache
+C:\Users\pines\Desktop\login usuarios\registrodetrabajadores2\registrodetrabajadores2\obj\Debug\registrodetrabajadores2.exe.config
+C:\Users\pines\Desktop\login usuarios\registrodetrabajadores2\registrodetrabajadores2\obj\Debug\registrodetrabajadores2.Form1.resources
+C:\Users\pines\Desktop\login usuarios\registrodetrabajadores2\registrodetrabajadores2\obj\Debug\registrodetrabajadores2.Form2.resources
+C:\Users\pines\Desktop\login usuarios\registrodetrabajadores2\registrodetrabajadores2\obj\Debug\registrodetrabajadores2.Frm_usuario.resources
+C:\Users\pines\Desktop\login usuarios\registrodetrabajadores2\registrodetrabajadores2\obj\Debug\registrodetrabajadores2.Properties.Resources.resources
+C:\Users\pines\Desktop\login usuarios\registrodetrabajadores2\registrodetrabajadores2\obj\Debug\login usuarios.csproj.GenerateResource.cache
+C:\Users\pines\Desktop\login usuarios\registrodetrabajadores2\registrodetrabajadores2\obj\Debug\login usuarios.csproj.CoreCompileInputs.cache
+C:\Users\pines\Desktop\login usuarios\registrodetrabajadores2\registrodetrabajadores2\obj\Debug\registrodetrabajadores2.exe
+C:\Users\pines\Desktop\login usuarios\registrodetrabajadores2\registrodetrabajadores2\obj\Debug\registrodetrabajadores2.pdb
