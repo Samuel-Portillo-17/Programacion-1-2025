@@ -100,7 +100,7 @@ namespace WebAppAcademica.Controllers
         }
 
         private bool AlumnoExists(int id)
-        {
+        { 
             return _context.Alumnos.Any(e => e.AlumnoId == id);
         }
     }
